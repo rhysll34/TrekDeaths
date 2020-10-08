@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/er_episode_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/er_episode_title"
+        tools:text="0"/>
+
+    <TextView
+        android:id="@+id/er_episode_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/er_episode_number"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:text="Balance of Mercy"/>
+
+    <TextView
+        android:id="@+id/er_red_dead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/er_crew_details"
+        app:layout_constraintRight_toLeftOf="@id/er_blue_dead"
+        app:layout_constraintLeft_toLeftOf="@id/er_episode_title"
+        app:layout_constraintBottom_toBottomOf="@id/er_crew_details"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="13" />
+
+    <TextView
+        android:id="@+id/er_blue_dead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/er_crew_details"
+        app:layout_constraintLeft_toRightOf="@id/er_red_dead"
+        app:layout_constraintRight_toLeftOf="@id/er_yellow_dead"
+        app:layout_constraintBottom_toBottomOf="@id/er_crew_details"
+        tools:text="0" />
+
+    <TextView
+        android:id="@+id/er_yellow_dead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/er_crew_details"
+        app:layout_constraintRight_toLeftOf="@id/er_crew_details"
+        app:layout_constraintLeft_toRightOf="@id/er_blue_dead"
+        app:layout_constraintBottom_toBottomOf="@id/er_crew_details"
+        tools:text="0"/>
+
+    <Button
+        android:id="@+id/er_crew_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/er_episode_title"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/er_yellow_dead"
+        app:layout_constraintBottom_toTopOf="@id/er_crew_recycler"
+        android:text="@string/crew_details"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/er_crew_recycler"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/er_crew_details"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:visibility="gone" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
