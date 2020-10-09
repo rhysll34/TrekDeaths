@@ -24,7 +24,7 @@ class CrewAdapter(private val crewMember: List<String>, val showStardate: Boolea
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(
             R.layout.crew_recycler, parent, false)
-        return ViewHolder(view)
+        return ViewHolder(view, showStardate)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {

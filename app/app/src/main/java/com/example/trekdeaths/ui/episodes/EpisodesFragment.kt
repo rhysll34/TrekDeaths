@@ -11,12 +11,17 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.trekdeaths.R
+import com.example.trekdeaths.presenter.Presenter
 import com.example.trekdeaths.ui.adapters.EpisodeAdapter
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class EpisodesFragment : Fragment() {
 
     private lateinit var episodesViewModel: EpisodesViewModel
     private lateinit var episodesRecycler: RecyclerView
+    @Inject lateinit var presenter: Presenter
 
     override fun onCreateView(
             inflater: LayoutInflater,

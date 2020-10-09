@@ -10,18 +10,24 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.trekdeaths.R
+import com.example.trekdeaths.presenter.Presenter
 import com.example.trekdeaths.ui.adapters.CrewAdapter
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class SearchFragment : Fragment() {
+    @Inject
+    lateinit var presenter: Presenter
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val root = inflater.inflate(R.layout.fragment_search, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
 
-        val crewAdapter = CrewAdapter(listOf("Errand of Terror"))
+        val crewAdapter = CrewAdapter(listOf("Errand of Terror"), true)
         val crewRecycler = root.findViewById<RecyclerView>(R.id.fs_results_recycler)
         crewRecycler.adapter = crewAdapter
         crewRecycler.layoutManager = LinearLayoutManager(activity)

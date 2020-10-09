@@ -9,10 +9,16 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.trekdeaths.R
+import com.example.trekdeaths.presenter.Presenter
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class VisualiseFragment : Fragment() {
 
     private lateinit var visualiseViewModel: VisualiseViewModel
+    @Inject
+    lateinit var presenter: Presenter
 
     override fun onCreateView(
             inflater: LayoutInflater,
