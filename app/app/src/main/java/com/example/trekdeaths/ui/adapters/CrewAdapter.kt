@@ -4,15 +4,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.View.VISIBLE
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.trekdeaths.R
 import kotlinx.android.synthetic.main.crew_recycler.view.*
 
-class CrewAdapter(private val crewMember: List<String>, val showStardate: Boolean) : RecyclerView.Adapter<CrewAdapter.ViewHolder>() {
+class CrewAdapter(var crewMember: List<String>, val showStardate: Boolean) : RecyclerView.Adapter<CrewAdapter.ViewHolder>() {
     class ViewHolder(view: View, showStardate: Boolean) : RecyclerView.ViewHolder(view) {
-        val crewName = view.cr_crew_name
-        val crewNote = view.cr_crew_note
-        val stardate = view.cr_stardate
+        val crewName: TextView = view.cr_crew_name
+        val crewNote: TextView = view.cr_crew_note
+        val stardate: TextView = view.cr_stardate
 
         init {
             if (showStardate) {
@@ -28,9 +29,9 @@ class CrewAdapter(private val crewMember: List<String>, val showStardate: Boolea
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.crewName.text = crewMember.get(position)
-        holder.crewNote.text = crewMember.get(position)
-        holder.stardate.text = crewMember.get(position)
+        holder.crewName.text = crewMember[position]
+        holder.crewNote.text = crewMember[position]
+        holder.stardate.text = "1234.5"
     }
 
     override fun getItemCount(): Int {

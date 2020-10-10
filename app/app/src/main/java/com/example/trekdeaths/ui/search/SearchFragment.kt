@@ -27,13 +27,16 @@ class SearchFragment : Fragment() {
     ): View? {
         val root = inflater.inflate(R.layout.fragment_search, container, false)
 
-        val crewAdapter = CrewAdapter(listOf("Errand of Terror"), true)
+        val crewAdapter = CrewAdapter(presenter.getCrewMembers(""), true)
         val crewRecycler = root.findViewById<RecyclerView>(R.id.fs_results_recycler)
         crewRecycler.adapter = crewAdapter
         crewRecycler.layoutManager = LinearLayoutManager(activity)
 
         val searchBox = root.findViewById<TextView>(R.id.fs_search_text)
-        searchBox.addTextChangedListener {0}
+        searchBox.addTextChangedListener {
+            crewAdapter.crewMember = presenter.getCrewMembers("")
+            crewAdapter.notifyDataSetChanged()
+        }
 
         return root
     }

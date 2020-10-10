@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_search">
+    app:startDestination="@+id/nav_episodes">
 
     <fragment
         android:id="@+id/nav_episodes"
@@ -20,6 +20,6 @@
     <fragment
         android:id="@+id/nav_search"
         android:name="com.example.trekdeaths.ui.search.SearchFragment"
-        android:label="Crew Search"
+        android:label="@string/menu_search"
         tools:layout="@layout/fragment_search" />
 </navigation>

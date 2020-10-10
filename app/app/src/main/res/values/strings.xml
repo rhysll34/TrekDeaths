@@ -9,9 +9,10 @@
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_search">Search</string>
     <string name="menu_episodes">Episodes</string>
     <string name="menu_visualise">Visualise</string>
     <string name="episodes">Episodes</string>
     <string name="crew_details">Crew Details</string>
+    <string name="crew_member_name">Crew Member Name</string>
 </resources>

@@ -4,9 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -31,12 +29,8 @@ class EpisodesFragment : Fragment() {
         episodesViewModel =
                 ViewModelProviders.of(this).get(EpisodesViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_episodes, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
-        episodesViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
 
-        val episodeAdapter = EpisodeAdapter(listOf("Errand of Terror"))
+        val episodeAdapter = EpisodeAdapter(presenter.getEpisodesForSeries(1))
         val episodeRecycler = root.findViewById<RecyclerView>(R.id.episodes_recycler)
         episodeRecycler.adapter = episodeAdapter
         episodeRecycler.layoutManager = LinearLayoutManager(activity)

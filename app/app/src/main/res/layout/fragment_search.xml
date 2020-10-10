@@ -4,14 +4,15 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/fs_search_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/fs_results_recycler" />
+        app:layout_constraintBottom_toTopOf="@id/fs_results_recycler"
+        android:hint="@string/crew_member_name"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/fs_results_recycler"

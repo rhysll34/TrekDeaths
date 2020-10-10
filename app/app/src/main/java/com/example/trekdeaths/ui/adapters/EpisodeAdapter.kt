@@ -19,13 +19,12 @@ class EpisodeAdapter(val episodes: List<String>) : RecyclerView.Adapter<EpisodeA
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.episodeNumber.text = "1"
-        holder.episodeTitle.text = "Errand of Terror"
+        holder.episodeTitle.text = episodes[position]
         holder.redDead.text = "13"
         holder.blueDead.text = "0"
         holder.yellowDead.text = "0"
         holder.details.setOnClickListener {
-            if(holder.crewDetailsRecycler.visibility == VISIBLE)
-            {
+            if(holder.crewDetailsRecycler.visibility == VISIBLE) {
                 holder.crewDetailsRecycler.visibility = GONE
             } else {
                 holder.crewDetailsRecycler.visibility = VISIBLE

@@ -9,6 +9,8 @@
         android:id="@+id/er_episode_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/er_episode_title"
@@ -18,6 +20,8 @@
         android:id="@+id/er_episode_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toRightOf="@id/er_episode_number"
         app:layout_constraintRight_toRightOf="parent"
@@ -33,6 +37,7 @@
         app:layout_constraintBottom_toBottomOf="@id/er_crew_details"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintVertical_chainStyle="packed"
+        android:textColor="@color/red"
         tools:text="13" />
 
     <TextView
@@ -43,6 +48,7 @@
         app:layout_constraintLeft_toRightOf="@id/er_red_dead"
         app:layout_constraintRight_toLeftOf="@id/er_yellow_dead"
         app:layout_constraintBottom_toBottomOf="@id/er_crew_details"
+        android:textColor="@color/blue"
         tools:text="0" />
 
     <TextView
@@ -53,6 +59,7 @@
         app:layout_constraintRight_toLeftOf="@id/er_crew_details"
         app:layout_constraintLeft_toRightOf="@id/er_blue_dead"
         app:layout_constraintBottom_toBottomOf="@id/er_crew_details"
+        android:textColor="@color/yellow"
         tools:text="0"/>
 
     <Button
